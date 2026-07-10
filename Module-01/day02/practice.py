@@ -13,3 +13,9 @@ for number in range(1,11):
 for number in range(1,21):
     if number % 2 == 0:
         print(number)
+
+def apply_discount(price, percent=10):
+    discount=price*percent/100
+    return price-discount
+print(apply_discount(1000))
+print(apply_discount(1500,15))
