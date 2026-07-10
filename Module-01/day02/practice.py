@@ -19,3 +19,9 @@ def apply_discount(price, percent=10):
     return price-discount
 print(apply_discount(1000))
 print(apply_discount(1500,15))
+
+number=5
+while number>=1:
+    print(number)
+    number-=1
+print("Liftoff!")
