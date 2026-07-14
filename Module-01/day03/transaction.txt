@@ -1,0 +1,5 @@
+kidist,500
+tsion,450
+helen,600
+solomon,550
+kidist,200

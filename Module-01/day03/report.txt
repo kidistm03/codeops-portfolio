@@ -1,0 +1,5 @@
+Transaction Report
+kidist: 700
+helen: 600
+solomon: 550
+tsion: 450
