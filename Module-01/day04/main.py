@@ -20,12 +20,6 @@ class Account:
             print("Amount must be positive.")
             return
         self.__balance += amount
-    @balance.setter
-    def balance(self,value):
-        if value<0:
-            print("can't enter negative value")
-        else:
-            self.__balance=value
 
     
 account1=Account("kidist",10002121,5000)
