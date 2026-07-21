@@ -9,6 +9,7 @@ class Account:
         self.account_number = account_number
         self.__balance = balance
         self._observers = []
+        self.history = []  # Stack
 
     @property
     def balance(self):
@@ -31,6 +32,7 @@ class Account:
             return
 
         self.__balance += amount
+        self.history.append(("Deposit", amount))
         self._notify(f"{self.owner} deposited {amount} ETB")
 
     def withdraw(self, amount):
@@ -43,7 +45,23 @@ class Account:
             return
 
         self.__balance -= amount
+        self.history.append(("Withdraw", amount))
         self._notify(f"{self.owner} withdrew {amount} ETB")
+
+    def undo_last(self):
+        if len(self.history) == 0:
+            print("No transaction to undo.")
+            return
+
+        transaction, amount = self.history.pop()
+
+        if transaction == "Deposit":
+            self.balance = self.balance - amount
+
+        elif transaction == "Withdraw":
+            self.balance = self.balance + amount
+
+        print(f"Undo {transaction}: {amount} ETB")
 
     def statement(self):
         print("Account")
@@ -81,6 +99,7 @@ class CurrentAccount(Account):
 
         if amount <= self.balance + self.overdraft:
             self.balance = self.balance - amount
+            self.history.append(("Withdraw", amount))
             self._notify(f"{self.owner} withdrew {amount} ETB")
         else:
             print("Overdraft limit exceeded")
@@ -106,21 +125,27 @@ class AccountFactory:
         else:
             raise ValueError("Invalid account type")
 
+
 class AccountRegistry:
 
     def __init__(self):
         self.accounts = {}
+
     def add(self, account):
         self.accounts[account.account_number] = account
 
+    def find(self, account_number):
+        return self.accounts.get(account_number)
+
+    def list_all(self):
+        return self.accounts.values()
 
 
 
-
-
-#  MAIN PROGRAM 
 
 sms = AlertService()
+
+registry = AccountRegistry()
 
 account1 = AccountFactory.create(
     "savings",
@@ -139,15 +164,38 @@ account2 = AccountFactory.create(
 account1.subscribe(sms)
 account2.subscribe(sms)
 
+registry.add(account1)
+registry.add(account2)
+
+
 account1.deposit(1000)
 account1.add_interest()
 
 account2.withdraw(7500)
 
-accounts = [account1, account2]
 
-print("\nStatements\n")
+print("\nFind Account ")
+found = registry.find(10002121)
 
-for account in accounts:
+if found:
+    found.statement()
+
+
+print("\nAll Accounts")
+
+for account in registry.list_all():
     account.statement()
     print()
+
+print("Transaction History:")
+print(account1.history)
+
+print("\nUndo Last Transaction")
+account1.undo_last()
+
+
+print("\nHistory After Undo:")
+print(account1.history)
+
+
+print("\nFinal Balance:", account1.balance)
