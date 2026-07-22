@@ -5,7 +5,6 @@
 #numbers[i]==target
 
 
-
 #when we compare string we are comparing there ascii values
 #binary searech there call should be sorted
 
@@ -34,22 +33,34 @@
 
 # print(linear_search(lisut,target))
 
+# cities=["aa","hawasa","adama","harari"]
+# cities.append("asmera")
+# cities.remove("asmera")
+# cities.pop()
+# cities.reverse()
+# print(cities)
 
 
-numbers=[1,2,3,4,5,6,7,8,9,10]
-target=7
 
-def binary_search(numbers,target):
-    left=0
-    right=len(numbers)-1
-    while left<=right:
-        mid=(left+right)//2
-        if numbers[mid]==target:
-            return mid
-        elif numbers[mid]<target:
-            left=mid+1
-        else:
-            right=mid-1
-    return -1
 
-print(binary_search(numbers,target))
+# totals = []
+# for price in [100, 250, 400]:
+    
+#     totals.append(price * 1.15)
+# print(totals)
+
+prices = {
+    "Bread":50,
+    "Milk":80,
+    "Eggs":120
+}
+
+for item, price in prices.items():
+    print(item, price)
+
+prices = {"Bread": 50, "Milk": 80, "Eggs": 120} # ETB
+for item, price in prices.items():
+    print(f"{item}: {price} ETB")
+print(prices.keys()) # the item names
+print(prices.values()) # the prices
+print("Milk" in prices) # True — membership test on keys
