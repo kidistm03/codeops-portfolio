@@ -6,6 +6,7 @@ number=len(city)
 print(number)
 
 
+
 #practice 2
 price={
     "bread":150,
@@ -14,8 +15,10 @@ price={
     "coffee":1000,
     "biscuit":30
 }
+
 for item,prices in price.items():
     print(f"{item}:{prices}ETB")
+
 
 
 #practice 3
@@ -46,6 +49,6 @@ except ValueError:
 except ZeroDivisionError:
     print("the value cant be divide by 0")
 else:
-    print("Done sucessfully")
+    print(result)
 finally:
     print("program finished")

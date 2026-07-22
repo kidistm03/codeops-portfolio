@@ -1,44 +1,27 @@
 stock = {}
 
 try:
-    with open("pharmacy.txt", "r") as file:
-
-        for line in file:
-            item, quantity = line.strip().split(",")
-
-            stock[item] = int(quantity)
+    with open("pharmacy.txt") as f:
+        for line in f:
+            item,qty = line.strip().split(",")
+            stock[item] = int(qty)
 
 except FileNotFoundError:
-    print("No stock file found. Starting with empty stock.")
+    print("No stock file yet ")
 
 
 def adjust(item, amount):
-
-    if item in stock:
-        stock[item] = stock[item] + amount
-    else:
-        stock[item] = amount
+    stock[item] = stock.get(item, 0) + amount
 
 
-adjust("Paracetamol", -3)  
-adjust("VitaminC", 5)       
+adjust("VitaminC", -3)
 
 
-
-print("Low stock items:")
-
-for item, quantity in stock.items():
-
-    if quantity < 10:
-        print(item, "=", quantity)
-
+for item, qty in stock.items():
+    if qty < 10:
+        print(f"Low stock: {item}: {qty}")
 
 
 with open("pharmacy.txt", "w") as file:
-
-    for item, quantity in stock.items():
-
-        file.write(item + "," + str(quantity) + "\n")
-
-
-print("Stock updated successfully!")
+    for item, qty in stock.items():
+        file.write(f"{item},{qty}\n")

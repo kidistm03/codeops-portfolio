@@ -1,4 +1,5 @@
-Paracetamol,12
-Amoxicillin,5
-VitaminC,25
-Bandage,8
+Paracetamol,20
+Amoxicillin,9
+VitaminC,6
+Bandage,6
+
