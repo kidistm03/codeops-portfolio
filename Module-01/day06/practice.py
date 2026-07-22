@@ -1,145 +1,131 @@
+#1 
 class Report:
+    def __init__(self, content):
+        self.content = content
 
-    def create(self):
-        print("Report created")
+    def build(self):
+        return f"Report: {self.content}"
 
 class ReportSaver:
-
-    def save(self):
-        print("Report saved")
-
+    def save(self, report):
+        print("Saving report...")
+        print(report)
 
 class EmailSender:
+    def send(self, report):
+        print("Sending email...")
+        print(report)
 
-    def send(self):
-        print("Report emailed")
+report = Report("Monthly sales")
+built_report = report.build()
 
-report = Report()
 saver = ReportSaver()
+saver.save(built_report)
 email = EmailSender()
+email.send(built_report)
 
-report.create()
-saver.save()
-email.send()
+#2
 class Shape:
-
     def area(self):
         pass
+
 class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
 
     def area(self):
-        print("Circle area calculated")
+        return 3.14 * self.radius * self.radius
+
 class Square(Shape):
 
-    def area(self):
-        print("Square area calculated")
+    def __init__(self, side):
+        self.side = side
 
+    def area(self):
+        return self.side * self.side
+    
 class Triangle(Shape):
-
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
     def area(self):
-        print("Triangle area calculated")
+        return 0.5 * self.base * self.height
 
 shapes = [
-    Circle(),
-    Square(),
-    Triangle()
+    Circle(5),
+    Square(4),
+    Triangle(6,3)
 ]
 for shape in shapes:
-    shape.area()
+    print(shape.area())
 
+#3
 class AppSettings:
-
     _instance = None
-    def new(cls):
-
+    def __new__(cls):
         if cls._instance is None:
-
-            cls._instance = super().new(cls)
-
+            cls._instance = super().__new__(cls)
             cls._instance.currency = "ETB"
-
         return cls._instance
 
-settings1 = AppSettings()
+setting1 = AppSettings()
+setting2 = AppSettings()
+print(setting1.currency)
+print(setting2.currency)
+print(setting1 is setting2)
 
-settings2 = AppSettings()
-print("Currency:", settings1.currency)
-
-print("Same object?", settings1 is settings2)
-
-class FactoryCircle:
+#4
+class Circle:
+    def draw(self):
+        print("Drawing Circle")
+class Square:
+    def draw(self):
+        print("Drawing Square")
+class Triangle:
 
     def draw(self):
-        print("Circle created")
-
-class FactorySquare:
-
-    def draw(self):
-        print("Square created")
-class FactoryTriangle:
-
-    def draw(self):
-        print("Triangle created")
+        print("Drawing Triangle")
 class ShapeFactory:
     @staticmethod
     def create(kind):
-
         if kind == "circle":
-            return FactoryCircle()
-
+            return Circle()
         elif kind == "square":
-            return FactorySquare()
-
+            return Square()
         elif kind == "triangle":
-            return FactoryTriangle()
-
+            return Triangle()
         else:
             return None
-
+        
 shape1 = ShapeFactory.create("circle")
-
 shape2 = ShapeFactory.create("square")
-
-shape3 = ShapeFactory.create("triangle")
-
-
 shape1.draw()
-
 shape2.draw()
 
-shape3.draw()
+#5
+class Subscriber:
+    def update(self, news):
+        pass
+
+class EmailSubscriber(Subscriber):
+    def update(self, news):
+        print("Email received:", news)
+
+class SMSSubscriber(Subscriber):
+    def update(self, news):
+        print("SMS received:", news)
 
 class NewsAgency:
-    def init(self):
-
+    def __init__(self):
         self.subscribers = []
-
-
     def add_subscriber(self, subscriber):
-
         self.subscribers.append(subscriber)
-    def publish(self, news):
-
+    def notify(self, news):
         for subscriber in self.subscribers:
-
             subscriber.update(news)
-class EmailSubscriber:
-    def update(self, news):
-
-        print("Email notification:", news)
-class SMSSubscriber:
-    def update(self, news):
-
-        print("SMS notification:", news)
 agency = NewsAgency()
-email_user = EmailSubscriber()
-
-sms_user = SMSSubscriber()
-
-
-agency.add_subscriber(email_user)
-
-agency.add_subscriber(sms_user)
-
-
-agency.publish("New Addis Bank service launched")
+email = EmailSubscriber()
+sms = SMSSubscriber()
+agency.add_subscriber(email)
+agency.add_subscriber(sms)
+agency.notify("New iPhone released!")

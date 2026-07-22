@@ -106,9 +106,6 @@ class AccountFactory:
         else:
             raise ValueError("Invalid account type")
 
-
-#  MAIN PROGRAM 
-
 sms = AlertService()
 
 account1 = AccountFactory.create(
