@@ -22,6 +22,6 @@ print (number)
 
 
 # insertion sort
-number=[3,5,1,6,2,4,10,7]
-n=len(number)
-for i in range(1,n):
+# number=[3,5,1,6,2,4,10,7]
+# n=len(number)
+# for i in range(1,n):

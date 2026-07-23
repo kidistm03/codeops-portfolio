@@ -2,7 +2,6 @@ class AlertService:
     def update(self, message):
         print(f"[SMS Alert] {message}")
 
-
 class Account:
     def __init__(self, owner, account_number, balance):
         self.owner = owner
@@ -10,7 +9,6 @@ class Account:
         self.__balance = balance
         self._observers = []
         self.history = []  # Stack
-
     @property
     def balance(self):
         return self.__balance
@@ -30,16 +28,13 @@ class Account:
         if amount <= 0:
             print("Amount must be positive.")
             return
-
         self.__balance += amount
         self.history.append(("Deposit", amount))
         self._notify(f"{self.owner} deposited {amount} ETB")
-
     def withdraw(self, amount):
         if amount <= 0:
             print("Amount must be positive.")
             return
-
         if amount > self.__balance:
             print("Insufficient balance")
             return
@@ -68,9 +63,7 @@ class Account:
         print(f"Owner: {self.owner}")
         print(f"Balance: {self.balance}")
 
-
 class SavingsAccount(Account):
-
     def __init__(self, owner, account_number, balance, rate):
         super().__init__(owner, account_number, balance)
         self.rate = rate
@@ -87,7 +80,6 @@ class SavingsAccount(Account):
 
 
 class CurrentAccount(Account):
-
     def __init__(self, owner, account_number, balance, overdraft):
         super().__init__(owner, account_number, balance)
         self.overdraft = overdraft
@@ -110,9 +102,7 @@ class CurrentAccount(Account):
         print(f"Balance: {self.balance}")
         print(f"Overdraft: {self.overdraft}")
 
-
 class AccountFactory:
-
     @staticmethod
     def create(kind, owner, account_number, balance):
 
@@ -125,9 +115,7 @@ class AccountFactory:
         else:
             raise ValueError("Invalid account type")
 
-
 class AccountRegistry:
-
     def __init__(self):
         self.accounts = {}
 
@@ -140,62 +128,34 @@ class AccountRegistry:
     def list_all(self):
         return self.accounts.values()
 
-
-
-
 sms = AlertService()
 
 registry = AccountRegistry()
 
-account1 = AccountFactory.create(
-    "savings",
-    "Kidist",
-    10002121,
-    5000
-)
+account1 = AccountFactory.create("savings","Kidist",10002121,5000)
 
-account2 = AccountFactory.create(
-    "current",
-    "Tsion",
-    10003321,
-    7000
-)
-
+account2 = AccountFactory.create("current","Tsion",10003321,7000)
 account1.subscribe(sms)
 account2.subscribe(sms)
 
 registry.add(account1)
 registry.add(account2)
 
-
 account1.deposit(1000)
 account1.add_interest()
-
 account2.withdraw(7500)
-
-
 print("\nFind Account ")
 found = registry.find(10002121)
-
 if found:
     found.statement()
-
-
 print("\nAll Accounts")
-
 for account in registry.list_all():
     account.statement()
     print()
-
 print("Transaction History:")
 print(account1.history)
-
 print("\nUndo Last Transaction")
 account1.undo_last()
-
-
 print("\nHistory After Undo:")
 print(account1.history)
-
-
 print("\nFinal Balance:", account1.balance)
