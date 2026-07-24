@@ -50,9 +50,40 @@ def checkMeera(numbers):
     for number in numbers:
         if number*2 in numbers:
             print("I am NOT a Meera array")
-        else:
-            print("I am a Meera array")
+            return
+    print("I am a Meera array")
 
 checkMeera([10, 4, 0, 5])
 checkMeera([7, 4, 9])
 checkMeera([1, -6, 4, -3])
+
+# Question 5 (Dual array)
+# ● Define a Dual array to be an array where every value occurs exactly twice. For example, {1, 2, 1, 3, 3, 2} is a dual array.The following arrays are not Dual arrays {2, 5, 2, 5, 5} (5 occurs three times instead of two times) {3, 1, 1, 2, 2} (3 occurs once instead of two
+# times) Write a function named isDual that returns 1 if its array argument is a Dual array.
+# Otherwise it returns 0.
+def isDual(numbers):
+    for number in numbers:
+        if numbers.count(number)!=2:
+            return 0
+    return 1
+print(isDual([2,3,3,1,2,3]))
+print(isDual([2,3,1,2,3]))
+print(isDual([2,3,1,2,3,1]))
+
+# Question 6
+# ● Write a function that takes the number of seconds and returns the digital format clock time as a string. Time should be counted from 00:00:00.
+#       ○ Examples: digitalClock(5025) as "01:23:45" 5025 seconds is 1 hour, 23 mins, 45secs.
+#       ■ digitalClock(61201) as "17:00:01" No AM/PM. 24h format.
+#       ■ digitalClock(87000) as "00:10:00" It's 00:10 next day.
+
+def digitalClock(seconds):
+    seconds = seconds % 86400
+    hours = seconds // 3600
+    seconds = seconds % 3600
+    minutes = seconds // 60
+    seconds = seconds % 60
+    print(f"{hours:02}:{minutes:02}:{seconds:02}")
+
+digitalClock(5025)
+digitalClock(61201)
+digitalClock(87000)
