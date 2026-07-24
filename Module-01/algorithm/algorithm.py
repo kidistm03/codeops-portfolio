@@ -21,9 +21,17 @@ getOnlyEvens([0, 1, 2, 3, 4])
 # ● Create a function that takes a two-digit number as an parameter and prints "Ok" inthe console if the given string is greater than its reversed digit version. If not, the function will print "Not ok"
 #      ○ Test 1: reverseCompare(72) prints "ok" because 72 > 27
 #      ○ reverseCompare(23) prints "Not ok", because 23 is not greater than 32
-# def reverseCompare(number):
+def reverseCompare(number):
+    tens=number//10
+    ones=number%10
+    reverse = (ones * 10) + tens
+    if number>reverse:
+        print("ok")
+    else:
+        print("Not ok")
 
-
+reverseCompare(72)
+reverseCompare(23)
 
 
 
