@@ -2,15 +2,20 @@
 # Given an array of numbers, write a function that prints in the console another arraywhich contains all the even numbers in the original array, which also have even indexes only.
 #       ○ Test 1: getOnlyEvens([1, 2, 3, 6, 4, 8]) prints [ 4]
 #       ○ Test 2: getOnlyEvens([0, 1, 2, 3, 4]) prints [0, 2, 4]
-# def getOnlyEvens(number):
-    
-#     for i in range (len(number)):
-#         if i%2==0:
-#             if number[i] % 2 == 0:
-#                 print(number)
 
-# getOnlyEvens([1, 2, 3, 6, 4, 8])
-# getOnlyEvens([0, 1, 2, 3, 4])
+def getOnlyEvens(numbers):
+    number=[]
+    for i in range (len(numbers)):
+        
+        if i%2==0:
+            if numbers[i] % 2 == 0:
+                number.append(numbers[i])
+    print(number)
+
+getOnlyEvens([1, 2, 3, 6, 4, 8])
+getOnlyEvens([0, 1, 2, 3, 4])
+
+
 
 # Question 2
 # ● Create a function that takes a two-digit number as an parameter and prints "Ok" inthe console if the given string is greater than its reversed digit version. If not, the function will print "Not ok"
