@@ -8,22 +8,52 @@
 <body>
     <h3>Reservation</h3>
     <form>
-        <lable form="fname">Name:</lable>
-        <input type="text" id="fname"><br>
-        <lable form="phonee">tel:</lable>
-        <input type="tel" id="phonee">
-
+        <label for="fname">Name:</label>
+        <input type="text" id="fname" required><br>
+        <label for="phonee">tel:</label>
+        <input type="tel" id="phonee" pattern="09[0-9]{8}" required><br>
+        <label for="guests">Guest</label>
+        <input type="number" id="guests"min="1" max="20" required><br>
+        <label for="dates">Date</label>
+        <input type="date" id="dates" required><br><br>
+        <button type="submit">Reserved</button>        
     </form>
-    <table style="border: 2px solid black;">
-        <thead>
+    <table style="border: 2px solid black; width:300px;">
+        <caption>Habesha Eatery landing page</caption>
+        <thead  style="border: 2px solid black;">
             <tr>
-                <th>no</th>
-                <th>item</th>
-                <th>price</th>
+                <th scope="col">no</th>
+                <th scope="col">item</th>
+                <th scope="col">price</th>
             </tr>
         </thead>
-    </table>
-    <img src="https://unsplash.com/s/photos/hotel"alt="our quality room">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0ePGmmCq5zA?si=3KtWlIHxYg901elH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <tbody>
+            <tr>
+                <td style="border: 2px solid black;">1</td>
+                <td style="border: 2px solid black;">kitfo</td>
+                <td style="border: 2px solid black;">1500 ETB</td>
+            </tr>
+            <tr>
+                <td style="border: 2px solid black;">2</td>
+                <td style="border: 2px solid black;">tibis</td>
+                <td style="border: 2px solid black;">1000 ETB</td>
+            </tr>
+            <tr>
+                <td style="border: 2px solid black;">3</td>
+                <td style="border: 2px solid black;">dulet</td>
+                <td style="border: 2px solid black;">800 ETB</td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <img src="./images/our.jpg"alt="our traditional restaurant"width="1250px" loading="lazy">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d336.51474201398304!2d38.80091921810243!3d9.014133481683677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1785533228708!5m2!1sen!2set" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        title="Map of our location"
+        referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
 </body>
 </html>
