@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Eatery</title>
+    <meta
+      name="description"
+      content="Reserve a table at Habesha Eatery and enjoy authentic Ethiopian cuisine."
+    />
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center">Habesha Eatery</h1>
+    </header>
+    <nav>
+      <a href="#reservation">Reservation</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+    </nav>
+    <h2>Reservation page</h2>
+    <form>
+      <label for="namee">Name:</label>
+      <input type="text" id="namee" required /><br />
+      <label for="emaill">Email:</label>
+      <input type="email" id="emaill" required /><br />
+      <label for="tele">Telephone</label>
+      <input type="tel" id="tele" pattern="09[0-9]{8}" required /><br />
+      <label for="datee">Date:</label>
+      <input type="date" id="datee" required /><br />
+      <label for="party">Party-size:</label>
+      <input type="number" id="party" min="1" max="20" required />
+    </form>
+  </body>
+</html>
