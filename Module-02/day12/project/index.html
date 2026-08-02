@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Eatery - Reservation</title>
+    <meta
+      name="description"
+      content="Reserve a table at Habesha Eatery in Addis Ababa."
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Habesha Eatery</h1>
+    </header>
+    <nav>
+      <a href="index.html">Reservation</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+      <section>
+        <h2>Reservation Form</h2>
+        <form action="" method=""style="">
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" required /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" required /><br /><br />
+
+          <label for="phone">Telephone:</label><br />
+          <input
+            type="tel"
+            id="phone"
+            pattern="09[0-9]{8}"
+            required
+          /><br /><br />
+
+          <label for="date">Reservation Date:</label><br />
+          <input type="date" id="date" required /><br /><br />
+
+          <label for="party">Party Size:</label><br />
+          <input
+            type="number"
+            id="party"
+            min="1"
+            max="20"
+            required
+          /><br /><br />
+          <label for="request"> Special Requests: </label><br />
+          <textarea id="request" rows="4" cols="30"></textarea>
+          <br /><br />
+          <button type="submit">Reserve Table</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Menu</h2>
+        <table border="1">
+          <caption>
+            Habesha Eatery Menu
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Food</th>
+              <th scope="col">Price (ETB)</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Kitfo</td>
+              <td>1500 ETB</td>
+            </tr>
+            <tr>
+              <td>Doro Wat</td>
+              <td>1200 ETB</td>
+            </tr>
+            <tr>
+              <td>Tibs</td>
+              <td>1000 ETB</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Restaurant</h2>
+        <img
+          src="images/traditional-food.jpg"
+          alt="Traditional Ethiopian food served at Habesha Eatery"
+          width="500"
+          loading="lazy"
+        />
+      </section>
+
+      <section>
+        <h2>Location</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d336.51474201398304!2d38.80091921810243!3d9.014133481683677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1785533228708!5m2!1sen!2set"
+          width="500"
+          height="300"
+          title="Habesha Eatery Location"
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <footer>
+      <p>Bole, Addis Ababa</p>
+    </footer>
+  </body>
+</html>
