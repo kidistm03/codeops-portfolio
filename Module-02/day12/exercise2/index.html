@@ -4,33 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Habesha Eatery</title>
-    <meta
-      name="description"
-      content="Reserve a table at Habesha Eatery and enjoy authentic Ethiopian cuisine."
-    />
+    <meta name="description" content="Habesha Eatery reservation page" />
   </head>
   <body>
     <header>
-      <h1 style="text-align: center">Habesha Eatery</h1>
+      <h1>Habesha Eatery</h1>
     </header>
+
     <nav>
-      <a href="#reservation">Reservation</a>
-      <a href="#menu">Menu</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#reservation">Reservation</a> | <a href="#menu">Menu</a> |
       <a href="#location">Location</a>
     </nav>
-    <h2>Reservation page</h2>
-    <form>
-      <label for="namee">Name:</label>
-      <input type="text" id="namee" required /><br />
-      <label for="emaill">Email:</label>
-      <input type="email" id="emaill" required /><br />
-      <label for="tele">Telephone</label>
-      <input type="tel" id="tele" pattern="09[0-9]{8}" required /><br />
-      <label for="datee">Date:</label>
-      <input type="date" id="datee" required /><br />
-      <label for="party">Party-size:</label>
-      <input type="number" id="party" min="1" max="20" required />
-    </form>
+    <main>
+      <section id="reservation">
+        <h2>Reservation Form</h2>
+        <form>
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" required ><br><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" required ><br><br>
+
+          <label for="phone">Telephone:</label><br>
+          <input type="tel" id="phone" pattern="09[0-9]{8}"required><br><br>
+
+          <label for="date">Date:</label><br>
+          <input type="date" id="date" required><br><br>
+
+          <label for="party">Party Size:</label><br>
+          <input type="number" id="party" min="1"max="20"required><br><br>
+
+          <label for="request">Special Requests:</label><br>
+          <textarea id="request"></textarea><br><br>
+
+          <button type="submit">Reserve</button>
+        </form>
+      </section>
+
+      <section id="menu">
+        <h2>Menu</h2>
+
+        <table border="1">
+          <caption>
+            Habesha Eatery Menu
+          </caption>
+          <tr>
+            <th scope="col">Food</th>
+            <th scope="col">Price (ETB)</th>
+          </tr>
+          <tr>
+            <td>Kitfo</td>
+            <td>1500 ETB</td>
+          </tr>
+          <tr>
+            <td>Tibs</td>
+            <td>1000 ETB</td>
+          </tr>
+          <tr>
+            <td>Doro Wat</td>
+            <td>1200 ETB</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2>Our Food</h2>
+        <img src="images/our.jpg" alt="Traditional Ethiopian food" width="500" loading="lazy"/>
+      </section>
+      <section id="location">
+        <h2>Location</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d336.51474201398304!2d38.80091921810243!3d9.014133481683677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1785533228708!5m2!1sen!2set"
+          width="500"
+          height="300"
+          title="Habesha Eatery Location"
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Habesha Eatery</p>
+    </footer>
   </body>
 </html>
