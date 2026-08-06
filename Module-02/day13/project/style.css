@@ -1,1 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --brand: hsl(212, 68%, 33%);
+    --brand-hover: hsl(212, 68%, 45%);
+    --space: 16px;
+    --radius: 10px;
 
+    --background: hsl(210, 20%, 96%);
+    --card-background: white;
+    --text: hsl(220, 15%, 20%);
+    --border: hsl(210, 20%, 88%);
+    --hover:hsl(212, 59%, 89%);
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    background-color: var(--background);
+    color: var(--text);
+}
+.card{
+    max-width: 360px;
+    margin: 40px auto;
+    padding: var(--space);
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+h1{
+    color: var(--brand);
+    margin-bottom: 10px;
+}
+
+h1::before{
+    content: "☕";
+}
+.tagline{
+    font-style: italic;
+    color: gray;
+    margin-bottom: var(--space);
+}
+p{
+    margin-bottom: var(--space);
+}
+.btn{
+    background-color: var(--brand);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn:hover{
+    background-color: var(--brand-hover);
+}
+.card:hover{
+    background-color: var(--hover) ;
+    transform: scale(1.03);
+}
