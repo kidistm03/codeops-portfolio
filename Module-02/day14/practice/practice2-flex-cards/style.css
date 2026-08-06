@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial;
+}
+.container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.card{
+    flex:1;
+    min-width:200px;
+    padding:30px;
+    background:lightgray;
+}
