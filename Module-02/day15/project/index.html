@@ -1,58 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Habesha Eatery</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <h2>Habesha Eatery</h2>
-            <ul>
-                <li><a href ="#">Home</a></li>
-                <li><a href ="#">About</a></li>
-                <li><a href ="#">Gallary</a></li>
-                <li><a href ="#">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <h2 class="logo">Habesha Eatery</h2>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reservation">Reserve</a></li>
+        </ul>
+      </nav>
     </header>
-    <section class="hero">
-        <h1>welcome to Habesha Eatery</h1>
-        <p>Enjoy your meal</p>
-        <a href ="">View Menu</a>
+    <section class="hero" id="home">
+      <h1>Traditional Ethiopian Food</h1>
+      <p>Enjoy authentic Ethiopian meals in the heart of Addis Ababa.</p>
+      <a href="#reservation" class="button"> Reserve Table </a>
     </section>
-    <section class="about">
-        <h2>About us</h2>
-        <p>Habesha Eatery is located in megenagna ,addis ababa. We serve fresh traditional Ethiopia food.</p>
+
+    <section class="about" id="about">
+      <h2>Our Story</h2>
+      <p>
+        Habesha Eatery is a family restaurant located in Bole, Addis Ababa. We
+        prepare traditional Ethiopian dishes using fresh ingredients and
+        cultural recipes.
+      </p>
     </section>
-    <section class="menu">
-        <div class="menuu">
-            <div class="card">
-                <h3>kitfo</h3>
-            </div>
-            <div class="card">
-                <h3>tibs</h3>
-            </div>
-            <div class="card">
-                <h3>shiro</h3>
-            </div>
-            <div class="card">
-                <h3>firfir</h3>
-            </div>
-            <div class="card">
-                <h3>coffee</h3>
-            </div>
-            
+    <section class="menu" id="menu">
+      <h2>Our Menu</h2>
+      <div class="menu-grid">
+        <div class="card">
+          <h3>Doro Wat</h3>
+          <p>Spicy chicken stew with injera.</p>
+          <h4>450 ETB</h4>
         </div>
+        <div class="card">
+          <h3>Kitfo</h3>
+          <p>Traditional minced beef dish.</p>
+          <h4>500 ETB</h4>
+        </div>
+        <div class="card">
+          <h3>Tibs</h3>
+          <p>Fried beef with vegetables.</p>
+          <h4>400 ETB</h4>
+        </div>
+        <div class="card">
+          <h3>Shiro</h3>
+          <p>Chickpea stew served with injera.</p>
+          <h4>250 ETB</h4>
+        </div>
+      </div>
     </section>
-    <section class="reservation">
-        <form>
-            <label for="fname">Name:</label>
-            <input type="text" id="fname">
-            <label for="age"></label>
-        </form>
+    <section class="reservation" id="reservation">
+      <h2>Reserve a Table</h2>
+      <form>
+        <label for="name"> Full Name </label>
+        <input type="text" id="name" required />
+        <label for="phone"> Phone Number </label>
+        <input type="tel" id="phone" pattern="09[0-9]{8}" required />
+        <label for="date"> Date </label>
+        <input type="date" id="date" required />
+        <label for="guest"> Number of Guests </label>
+        <input type="number" id="guest" min="1" max="20" required />
+        <button type="submit">Reserve</button>
+      </form>
     </section>
-</body>
+    <footer>
+      <h3>Habesha Eatery</h3>
+      <p>Location: Bole, Addis Ababa</p>
+      <p>Phone: +251944039061</p>
+      <p>Opening Hours: 8:00 AM - 10:00 PM</p>
+    </footer>
+  </body>
 </html>
