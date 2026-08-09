@@ -1,16 +1,29 @@
-let bill="1000"
-let partySize=20
-let total
-let tip
-let per_person
-console.log(Number(bill))
-bill=Number(bill)
-if (bill>300){
-    tip=bill*0.1
+const bill = 500;
+const partySize = 2;
+const payment = "telebirr";
+let tip;
+if (bill > 300) {
+    tip = bill * 0.10;
+} else {
+    tip = bill * 0.05;
 }
-else{
-    tip=bill*0.05
+
+let serviceFee;
+switch (payment) {
+    case "telebirr":
+        serviceFee = 5;
+        break;
+    case "cbe":
+        serviceFee = 3;
+        break;
+    default:
+        serviceFee = 0;
 }
-total=bill+tip
-per_person=total/partySize
-console.log(`The total amount is ${total} so it will become ${per_person} per person because the party size is ${partySize}`)
+const total = bill + tip + serviceFee;
+const perPerson = total / partySize;
+
+console.log(`Bill: ${bill} ETB`);
+console.log(`Tip: ${tip} ETB`);
+console.log(`Service Fee: ${serviceFee} ETB`);
+console.log(`Total: ${total} ETB`);
+console.log(`Each Person Pays: ${perPerson} ETB`);
