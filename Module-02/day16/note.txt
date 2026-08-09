@@ -1,1 +1,82 @@
+ js run in the browser engin 
+ what is the difference between java and javascript?
+ js-interprated,descriptive
+ java-declarative
+ premitive-string
+          -number
+          -undefined
+          -null
+          -boolean
+ non premitive-object
+              -array
+              
+              
+in js when we declare a variable var,let,const
+const redeclared aydergm
+let -not rediclare but reassign
+var rediclared yederegal,reassign yederegal-so it create error
 
+there are 2 types of error -syntax error-ye code execution yemyaskom
+                                  console.log(x)-it stop execution   when first we are not declare it 
+                           -semantic error - when the cod run and not give expected outcome
+
+<script src="<path"/>
+in js we can assign it to another data type 
+Number("Ababa") is called NaN because it cant change to numbe rdata typr
+Number("12") ->12  
+12=="12"
+if we want to change to different data types String(12),Boolean()
+all data that come from form is string
+isNaN is a function that is used to tell us if the function is changed to another data type or not
+
+without declaring if we say console.log (x)  it create error
+let x    is undefined
+  if (x){
+     console.log("yes")
+  }
+  else{
+     console.log("no")
+    }
+           -no
+
+operators
+artimatic
+comparision->===,==....
+    equality - loose- ==
+            10=="10"   true
+             - strict- === compare based on data type and value
+             10==="10"  false 
+logical-> !,||,&&
+precedence(priority)   (),!,&&,||
+1=="1" || !(3>5)&& true
+  1=="1" || !f && true
+  t || t 
+  
++- addition,concatination and unary
+let name="ababe"
+    (consol.log("Hello ${name}"))   if we inter {1+1} we can produce 2 
+    
+condition ?<true>:<false>
+    console.log (x>y?"true:"false")
+curnery operator
+
+
+increment pre and post
+pre increment x=10
+              y=++x
+              z=x++
+              col(y)->11 
+              col(z) -> 10   
+for (let i=1,i<=10;i++)
+var is global variable
+let functional stop/block
+const functional stop/block
+hosisting means we can acess variables before declaring    for var  but for let or const it is error
+                      clo(x)
+                      var(x)    undifiend 
+                         but for 
+                      clo(x)
+                      let(x)    reference error 
+what is the use of use strict?
+    used to rise error 
+dont use var to ddeclare a variable
