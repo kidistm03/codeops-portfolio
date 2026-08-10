@@ -1,8 +1,54 @@
-function deliveryFee(total) {
-    return(u)=>{
-        console.log(total)
-        console.log(u)
-    }
+// function deliveryFee(total) {
+//     return(u)=>{
+//         console.log(total)
+//         console.log(u)
+//     }
+// }
+// let x=deliveryFee(1000);
+// x('ffff')
+
+// let cb = (msg) => console.log(msg)
+
+// let higherOrderFunction = (endNumber , cb) => {
+//     // cb = callBack
+//     let i = 0
+//     while (i <= endNumber){
+//         if (i % 2 === 0){
+//             // even
+//             cb('even')
+//         } else{
+//             // odd
+//             cb('odd')
+//         }
+
+//         i++
+//     }
+// }
+// higherOrderFunction(10,cb)
+
+"use strict";
+// rest params: any number of prices
+const subtotal = (...prices) => prices.reduce((sum, p) => sum + p, 0);
+// factory (HOF + closure)
+const discountBy = (rate) => (n) => n * (1 - rate);
+// small pure helpers
+const withVat = (n) => n * 1.15;
+const toETB = (n) => `${n.toFixed(2)} ETB`;
+// closure keeps a running order number
+function makeReceiptMaker() {
+  let orderNo = 0;
+  const memberOff = discountBy(0.1);
+  return function (...items) {
+    orderNo++;
+    const gross = subtotal(...items);
+    const net = withVat(memberOff(gross));
+    return `#${orderNo}: ${toETB(net)}`;
+  };
 }
-let x=deliveryFee(1000);
-x('ffff')
+const receipt = makeReceiptMaker();
+// Almaz orders Doro Wat + Tibs + Shiro
+receipt(220, 180, 120);
+// "#1: 538.20 ETB"
+// Dawit orders Firfir + Buna
+receipt(140, 60);
+// "#2: 207.00 ETB"
