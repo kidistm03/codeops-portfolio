@@ -1,0 +1,33 @@
+return is the function value
+hoistle for let and const reference error  
+
+rust operator in js? i think it is to make a parameter to acess like array
+arrow function  const arrow =()=>{
+    console.log("shdjz)
+}
+ if we dont give name it is called ananoumes function
+ ... to indicate rest 
+a funtion that has no name is called ananumes function
+
+closure in js -is like  the oorties are acessble for inner function but not for others
+     const arrow=()=>{
+        let fname ="kidist"
+        const inner=()=>{
+            console.log(fname)
+        }
+
+        return inner()
+     }
+first order function directly execute yederegal
+higher order function 
+  -have conditions 
+      -it returns function 
+      -it acept functions as a parameter
+const myFun=(salary,total)=>{
+    total(salary)
+}
+let totalSalary=salary=>salary-(salary*0.15)
+console.log(totalSalary)
+
+
+callback is a function that pass other
