@@ -31,3 +31,7 @@ console.log(totalSalary)
 
 
 callback is a function that pass other
+The function you pass in is a callback
+
+
+
