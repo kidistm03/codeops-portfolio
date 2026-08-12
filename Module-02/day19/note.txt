@@ -1,0 +1,31 @@
+Dom=document object model
+It represents a web page as a tree-like structure of objects and nodes so that languages like JavaScript can read, change, or update the page structure, style, and content.
+
+the valid html found in html collection
+querySelector
+   -querySelector(".classname")
+   -querySelector("#id")
+queryselector   answer using node list
+
+disendant selector every child 
+
+togle  header kelele create yadergal kale yalwen yewesdal
+
+we can't update in live html collection update   but node list may not update in live 
+ live collection
+  -document.getElementsByClassName()HTMLCollectionLive (Auto-updates)
+  -document.getElementsByTagName()HTMLCollectionLive (Auto-updates)
+  -document.querySelectorAll()NodeListStatic (Snapshot)
+Live Collections vs. Static Collections?
+
+eventlistiner bind in 3 ways - inline
+                             -
+
+difference between onclick and addeventlistiner?
+
+Delegation
+
+
+style
+create
+append
