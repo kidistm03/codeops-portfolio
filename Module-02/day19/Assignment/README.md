@@ -13,8 +13,8 @@ Build a working single-page app where data leads and the DOM follows using the *
 *   **CSS Toggling:** Use the `.done` class for bought items instead of inline styles [1].
 
 ## Self-Check List
-- [ ] Does the form add items without reloading the page?
-- [ ] Does clicking an item toggle a strikethrough via a CSS class?
-- [ ] Does clicking the remove button delete the correct item from the array?
-- [ ] Does the counter update immediately after every change?
-- [ ] Is the `render()` function the only place where the list DOM is modified?
+- [✓] Does the form add items without reloading the page?
+- [✓] Does clicking an item toggle a strikethrough via a CSS class?
+- [✓] Does clicking the remove button delete the correct item from the array?
+- [✓] Does the counter update immediately after every change?
+- [✓] Is the `render()` function the only place where the list DOM is modified?
