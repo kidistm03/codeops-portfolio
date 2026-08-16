@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Theme toggle -->
+      <button id="themeButton">Dark Mode</button>
+
+      <h1>Signup Form</h1>
+
+      <!-- Number of people -->
+      <p id="count">0 people have signed up.</p>
+
+      <form id="signupForm">
+        <!-- Name -->
+        <label for="name">Name</label>
+
+        <input type="text" id="name" placeholder="Enter your name" />
+
+        <!-- Phone -->
+        <label for="phone">Phone</label>
+
+        <input
+          type="text"
+          id="phone"
+          placeholder="09xxxxxxxx or +2519xxxxxxxx"
+        />
+
+        <!-- Error message -->
+        <p id="error"></p>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
