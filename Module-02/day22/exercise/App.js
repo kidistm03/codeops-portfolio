@@ -5,6 +5,7 @@ const state = {
   watchlist: [],
   currency: "USD",
 };
+const status = document.querySelector("#status");
 const form = document.querySelector("#convert-form");
 const amount = document.querySelector("#amount");
 const select = document.querySelector("#currency");
@@ -25,10 +26,22 @@ async function loadRates() {
     status.textContent = "Could not load rates.";
   }
 }
+
+// Fetch & Render: Implement the API call to fetch rates into the state and render the currency dropdown.
 function render() {
   // fill the dropdown from the live rates
-  const codes = Object.keys(state.rates);
-  select.innerHTML = codes.map((c) => `<option>${c}</option>`).join("");
+  const currencies = Object.keys(state.rates);
+  select.innerHTML = "";
+  currencies.forEach(function (currency) {
+    const option = document.createElement("option");
+
+    option.value = currency;
+
+    option.textContent = currency;
+
+    select.appendChild(option);
+  });
+
   select.value = state.currency;
   renderWatchlist();
 }
