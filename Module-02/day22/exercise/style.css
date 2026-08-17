@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d9dfe7;
+    color: #1e293b;
+}
+.app {
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+.card {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    min-height: 50vh;
+}
+.card h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #1e3a8a;
+}
+.card > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 20px;
+}
