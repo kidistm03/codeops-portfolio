@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Addis Eats | Simple Ordering</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>● ADDIS EATS KITCHEN OPEN | Bole & Kazanchis Express</span>
+    <span>TeleBirr Live</span>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="nav">
+    <div class="logo">
+      <h1>🍴 Addis Eats</h1>
+      <p>Authentic Ethiopian Cuisine</p>
+    </div>
+
+    <input 
+      type="text" 
+      id="search" 
+      class="search" 
+      placeholder="Search dishes (e.g. Doro, Shiro, Kitfo)..." 
+    />
+
+    <div class="nav-buttons">
+      <select id="subcity-select" class="select">
+        <option value="Bole">📍 Bole (25 min)</option>
+        <option value="Kazanchis">📍 Kazanchis (20 min)</option>
+        <option value="Piassa">📍 Piassa (35 min)</option>
+      </select>
+      
+      <button class="cart-button">
+        🛍️ <span id="nav-cart-count">0 items</span> · 
+        <span id="nav-cart-total">0 ETB</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Ethiopian Flavors Delivered to Your Door</h2>
+    <p>Fresh 100% Teff Injera daily. Fast TeleBirr payment & live driver tracking.</p>
+  </section>
+
+  <!-- Main Layout -->
+  <main class="layout">
+
+    <!-- Primary Content -->
+    <section class="content">
+      
+      <!-- Category Tabs -->
+      <div class="tabs" id="category-tabs">
+        <button class="tab active" data-cat="all">All</button>
+        <button class="tab" data-cat="mains">Mains & Tibs</button>
+        <button class="tab" data-cat="fasting">Fasting / Shiro</button>
+        <button class="tab" data-cat="breakfast">Breakfast</button>
+      </div>
+
+      <!-- Quick Toggles -->
+      <div class="filters">
+        <div>
+          <button class="chip" id="btn-fasting">🌱 Fasting Only</button>
+          <button class="chip" id="btn-spicy">🌶️ Spicy Only</button>
+        </div>
+
+        <select id="sort-select" class="select">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+
+      <!-- Dish Cards Grid -->
+      <div id="menu" class="grid"></div>
+
+    </section>
+
+    <!-- Sidebar Cart -->
+    <aside class="sidebar">
+      <h3>🛍️ Your Order</h3>
+      <p class="subtext" id="cart-item-count-label">0 items selected</p>
+
+      <div id="cart-items" class="cart-list"></div>
+
+      <div class="summary">
+        <div class="row">
+          <span>Subtotal</span>
+          <span id="subtotal-val">0 ETB</span>
+        </div>
+
+        <div class="row">
+          <span>Delivery</span>
+          <span class="green-text">FREE</span>
+        </div>
+
+        <hr />
+
+        <div class="row total">
+          <strong>Total</strong>
+          <strong id="grandtotal-val" class="green-text">0 ETB</strong>
+        </div>
+
+        <button id="checkout-btn" class="primary-button">
+          Checkout with TeleBirr
+        </button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Addis Eats - Delivery across Bole, Kazanchis, Piassa, and CMC.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
