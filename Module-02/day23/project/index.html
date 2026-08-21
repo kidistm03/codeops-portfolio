@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Main Navigation -->
     <header class="nav">
       <div class="logo">
         <h1>🍴 Addis Eats</h1>
@@ -22,12 +21,6 @@
       />
 
       <div class="nav-buttons">
-        <select id="subcity-select" class="select">
-          <option value="Bole">📍 Bole (25 min)</option>
-          <option value="Kazanchis">📍 Kazanchis (20 min)</option>
-          <option value="Piassa">📍 Piassa (35 min)</option>
-        </select>
-
         <button class="cart-button">
           <span id="nav-cart-count">0 items</span> ·
           <span id="nav-cart-total">0 ETB</span>
@@ -35,7 +28,6 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
       <h2>Ethiopian Flavors Delivered to Your Door</h2>
       <p>
@@ -44,59 +36,17 @@
       </p>
     </section>
 
-    <!-- Main Layout -->
     <main class="layout">
-      <!-- Primary Content -->
       <section class="content">
-        <!-- Quick Toggles -->
         <div class="filters">
           <div>
-            <button class="chip" id="btn-fasting">🌱 Fasting Only</button>
-            <button class="chip" id="btn-spicy">🌶️ Spicy Only</button>
+            <button class="chip" id="btn-spicy">Spicy Only</button>
           </div>
-
-          <select id="sort-select" class="select">
-            <option value="featured">Featured</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-          </select>
         </div>
 
-        <!-- Dish Cards Grid -->
-        <div id="menu" class="grid">
-          <article class="card">
-            <div class="card-body">
-              <div>
-                <h3 class="card-title">Doro Wat</h3>
-                <p class="card-sub">Main • Spicy 🌶️</p>
-                <p class="card-desc">Traditional Ethiopian main dish.</p>
-              </div>
-
-              <div class="card-footer">
-                <span class="price">240 ETB</span>
-                <button class="btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-body">
-              <div>
-                <h3 class="card-title">Shiro</h3>
-                <p class="card-sub">Vegetarian</p>
-                <p class="card-desc">Ethiopian vegetarian dish.</p>
-              </div>
-
-              <div class="card-footer">
-                <span class="price">120 ETB</span>
-                <button class="btn">Add</button>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div id="menu" class="grid"></div>
       </section>
 
-      <!-- Sidebar Cart -->
       <aside class="sidebar">
         <h3>Your Order</h3>
         <p class="subtext" id="cart-item-count-label">0 items selected</p>
@@ -121,18 +71,29 @@
             <strong id="grandtotal-val" class="green-text">0 ETB</strong>
           </div>
 
-          <button id="checkout-btn" class="primary-button">
+          <button id="checkout-btn" class="btn-primary">
             Checkout with TeleBirr
           </button>
+
+          <!-- TeleBirr payment form -->
+          <div id="payment-form" class="payment-form" style="display: none">
+            <h3>TeleBirr Payment</h3>
+            <p>Order Total: <strong id="payment-total">0 ETB</strong></p>
+            <input
+              type="text"
+              id="customer-name"
+              placeholder="Enter your name"
+            />
+            <input type="text" id="customer-phone" placeholder="09XXXXXXXX" />
+            <p id="payment-error"></p>
+            <button id="pay-btn" class="btn-primary">Pay with TeleBirr</button>
+          </div>
         </div>
       </aside>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-      <p>
-        © 2026 Addis Eats - Delivery across Bole, Kazanchis, Piassa, and CMC.
-      </p>
+      <p>© 2026 Addis Eats</p>
     </footer>
 
     <script src="app.js"></script>

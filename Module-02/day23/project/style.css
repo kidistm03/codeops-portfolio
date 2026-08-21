@@ -27,8 +27,6 @@ body {
   line-height: 1.5;
 }
 
-
-
 /* Navbar */
 .nav {
   background: var(--bg-dark);
@@ -67,14 +65,6 @@ body {
   gap: 12px;
 }
 
-.select {
-  padding: 8px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: #fff;
-  font-size: 13px;
-}
-
 .cart-button {
   background: var(--primary);
   color: #fff;
@@ -85,7 +75,6 @@ body {
   cursor: pointer;
 }
 
-/* Hero */
 .hero {
   background: var(--bg-dark);
   color: #fff;
@@ -117,7 +106,6 @@ body {
     grid-template-columns: 1fr 300px;
   }
 }
-
 .filters {
   display: flex;
   justify-content: space-between;
@@ -224,7 +212,6 @@ body {
   font-weight: bold;
 }
 
-/* Sidebar Cart */
 .sidebar {
   background: #fff;
   border: 1px solid var(--border);
@@ -297,7 +284,49 @@ hr {
   margin-top: 12px;
 }
 
-/* Footer */
+.payment-form {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.payment-form h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+.payment-form p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.payment-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--text);
+
+  font-size: 13px;
+}
+.payment-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+#payment-error {
+  font-size: 12px;
+  color: #b91c1c;
+  margin-bottom: 10px;
+}
+
+.payment-form .btn-primary {
+  margin-top: 4px;
+}
+
 .footer {
   background: var(--bg-dark);
   color: #9ca3af;
