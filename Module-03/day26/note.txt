@@ -1,0 +1,50 @@
+npm registery vite
+npm run test
+when we exchange data in http it is in the form of json
+we asses files from the node using npm
+
+react icons-npm install i   or npm install react icons
+node module-contain the dependancies
+node_module - is put in .gitignore because it is a large file and we don't need it 
+react is build js so every thing put in static file 
+manually be dom yemisera bemulu is put in the index.html
+what help to update automatically in the versel?
+
+npm create
+npm install 
+
+module
+
+react js library where we build ui 
+library is banch of code 
+
+vite- component reusability
+    -real dom vs virtual dom 
+state is part of component
+node - dev server -js run time ienvt that makes to run outside of the browser
+npm is package manager
+
+devdependancy in package.json is help in the development
+
+npm run dev our build tool is vite
+vite config if u want to change port...
+
+xml->
+   ->every element should be closed 
+   can't say class insteade we say className
+jsx is js file and also can understand html file 
+we have to put the js in {console.log("dfdg")}
+
+
+in js - app.js -console.log
+index.html - h1 - console.log - x 
+jsx- console.log -h1 -correct-inside return if i want to return js i need to use {}
+
+
+npm run build 
+
+npm run preview-
+
+functional component means export functionalentry 
+point main.jsh 
+they export the app and then export
