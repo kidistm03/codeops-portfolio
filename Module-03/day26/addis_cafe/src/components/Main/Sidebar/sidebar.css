@@ -1,0 +1,23 @@
+.sidebar {
+  width: 220px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  height: 1350px;
+}
+
+.sidebar h2 {
+  color: #f5b400;
+  margin-top: 0;
+}
+
+.sidebar p {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.sidebar p:hover {
+  background-color: #8b0000;
+}

@@ -1,0 +1,14 @@
+.menu {
+  flex: 1;
+  background-color: #222;
+}
+
+.menu h2 {
+  color: #222;
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}

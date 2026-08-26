@@ -1,0 +1,16 @@
+.dish {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.dish h3 {
+  margin-top: 0;
+}
+
+.dish p {
+  color: #8b0000;
+  font-weight: bold;
+}
