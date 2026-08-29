@@ -1,0 +1,14 @@
+.header {
+  background-color: #8b0000;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header p {
+  margin: 8px 0 0;
+}

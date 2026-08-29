@@ -1,0 +1,20 @@
+.category-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.category-bar button {
+  padding: 8px 16px;
+  border: 1px solid #8b0000;
+  background-color: white;
+  color: #8b0000;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category-bar button.selected {
+  background-color: #8b0000;
+  color: white;
+}
