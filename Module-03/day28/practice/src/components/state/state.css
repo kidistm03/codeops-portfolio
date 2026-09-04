@@ -1,0 +1,11 @@
+.state {
+  text-align: center;
+  padding: 20px;
+}
+
+.state button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
