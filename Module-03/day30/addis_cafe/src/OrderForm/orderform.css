@@ -1,0 +1,44 @@
+.order-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.order-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.order-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.order-form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-form button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}

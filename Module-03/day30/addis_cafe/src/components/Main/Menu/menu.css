@@ -1,0 +1,37 @@
+.menu {
+  flex: 1;
+}
+
+.menu h2 {
+  margin-top: 0;
+}
+
+.menu h3 {
+  color: #8b0000;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.status {
+  text-align: center;
+  font-size: 20px;
+  padding: 30px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 30px;
+}
