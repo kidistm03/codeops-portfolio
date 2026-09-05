@@ -19,22 +19,31 @@ function Dish({ name, price, spicy, onAdd, onRemove }) {
 
   return (
     <div className="dish">
+
       <h3>{name}</h3>
 
       <p>{price} ETB</p>
 
-      {spicy && <span>Spicy 🌶️</span>}
+      {spicy && (
+        <span>Spicy 🌶️</span>
+      )}
 
       <p>Quantity: {count}</p>
 
-      <div>
-              <button onClick={handleAdd}>
-        Add
-      </button>
-        <button onClick={handleRemove}>−</button>
+      <div className="quantity-buttons">
+        <button onClick={handleAdd}>
+          Add
+        </button>
+        <button onClick={handleRemove}>
+          −
+        </button>
 
-        <button onClick={handleAdd}>+</button>
+        <button onClick={handleAdd}>
+          +
+        </button>
+
       </div>
+
     </div>
   );
 }

@@ -10,9 +10,13 @@ function App() {
     <div className="app">
 
       <Header />
+
       <Main />
+
       <OrderForm />
+
       <Footer />
+
     </div>
   );
 }
