@@ -1,0 +1,32 @@
+.dish {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dish h3 {
+  margin-top: 0;
+}
+
+.dish p {
+  margin: 8px 0;
+}
+
+.dish span {
+  color: red;
+  font-weight: bold;
+}
+
+.dish button {
+  padding: 8px 20px;
+  border: none;
+  background-color: #8b0000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dish button:hover {
+  background-color: #600000;
+}
