@@ -30,3 +30,18 @@
 .dish button:hover {
   background-color: #600000;
 }
+.quantity-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 15px;
+}
+.quantity-buttons button {
+  width: 75px;
+  height: 35px;
+  border: none;
+  background-color: #8b0000;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}

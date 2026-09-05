@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header/header";
 import Main from "./components/Main/main";
 import Footer from "./components/Footer/footer";
-import OrderForm from "./OrderForm/orderform";
+import OrderForm from "./components/OrderForm/orderform";
 
 function App() {
   return (

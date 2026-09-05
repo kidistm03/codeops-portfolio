@@ -10,5 +10,15 @@
 }
 
 .header p {
-  margin: 8px 0 0;
+  margin: 8px 0;
+}
+
+.cart-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: white;
+  color: #8b0000;
+  border-radius: 20px;
+  font-weight: bold;
 }

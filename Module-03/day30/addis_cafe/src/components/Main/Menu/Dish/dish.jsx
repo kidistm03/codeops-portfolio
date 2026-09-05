@@ -1,25 +1,24 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import "./dish.css";
 
-function Dish({ name, price, spicy, onAdd, onRemove }) {
-  const [count, setCount] = useState(0);
+function Dish({
+  name,
+  price,
+  spicy,
+  onAdd,
+  onRemove
+}) {
 
   function handleAdd() {
-    setCount(count + 1);
-    onAdd(price);
+    onAdd();
   }
 
   function handleRemove() {
-    if (count > 0) {
-      setCount(count - 1);
-      onRemove(price);
-    }
+    onRemove();
   }
 
   return (
     <div className="dish">
-
       <h3>{name}</h3>
 
       <p>{price} ETB</p>
@@ -28,12 +27,11 @@ function Dish({ name, price, spicy, onAdd, onRemove }) {
         <span>Spicy 🌶️</span>
       )}
 
-      <p>Quantity: {count}</p>
-
       <div className="quantity-buttons">
-        <button onClick={handleAdd}>
-          Add
-        </button>
+        
+      <button onClick={handleAdd}>
+        Add
+      </button>
         <button onClick={handleRemove}>
           −
         </button>
@@ -41,7 +39,6 @@ function Dish({ name, price, spicy, onAdd, onRemove }) {
         <button onClick={handleAdd}>
           +
         </button>
-
       </div>
 
     </div>

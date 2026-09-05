@@ -1,13 +1,18 @@
 .sidebar {
-  width: 200px;
+  width: 500px;
   background-color: #222;
   color: white;
   padding: 20px;
-  
-  border-radius: 10px;
-  height: 750px;
+  border-radius: 0 10px 10px 0;
+  flex-shrink: 0;
+  height:1250px;
+  margin-left: 2px;
 }
 
 .sidebar h3 {
   margin-top: 0;
+}
+
+.sidebar p {
+  cursor: pointer;
 }

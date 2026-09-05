@@ -1,21 +1,36 @@
-import { useEffect, useRef, useState } from "react";
+import {
+  useContext,
+  useMemo,
+  useRef,
+  useEffect,
+  useState
+} from "react";
+
+import { CartContext } from "../../cart/CartProvider";
+import useFetch from "../../hooks/useFetch";
+
 import CategoryBar from "./CategoryBar/categorybar";
 import Dish from "./Dish/dish";
-import { loadDishes } from "../../../api";
+
 import "./menu.css";
 
 function Menu() {
   const [category, setCategory] = useState("All");
 
-  const [dishes, setDishes] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-
-  const [error, setError] = useState("");
-
-  const [total, setTotal] = useState(0);
-
   const searchRef = useRef(null);
+
+  const url =
+    category === "All"
+      ? "/dishes.json"
+      : `/dishes.json?category=${category}`;
+
+  const {
+    data,
+    loading,
+    error
+  } = useFetch(url);
+
+  const { dispatch } = useContext(CartContext);
 
   const categories = [
     "All",
@@ -27,46 +42,36 @@ function Menu() {
     searchRef.current?.focus();
   }, []);
 
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function fetchDishes() {
-      try {
-        setLoading(true);
-        setError("");
-
-        const data = await loadDishes(
-          category,
-          controller.signal
-        );
-
-        setDishes(data);
-      } catch (error) {
-        if (error.name !== "AbortError") {
-          setError(error.message);
-        }
-      } finally {
-        setLoading(false);
-      }
+  const dishes = useMemo(() => {
+    if (category === "All") {
+      return data;
     }
 
-    fetchDishes();
+    return data.filter(
+      (dish) => dish.category === category
+    );
+  }, [data, category]);
 
-    return () => {
-      controller.abort();
-    };
-  }, [category]);
-
-  function addToOrder(price) {
-    setTotal(total + price);
+  function addToCart(dish) {
+    dispatch({
+      type: "ADD",
+      payload: dish
+    });
   }
 
-  function removeFromOrder(price) {
-    setTotal(total - price);
+  function removeFromCart(dish) {
+    dispatch({
+      type: "REMOVE",
+      payload: dish.id
+    });
   }
 
   if (loading) {
-    return <p className="status">Loading dishes...</p>;
+    return (
+      <p className="status">
+        Loading dishes...
+      </p>
+    );
   }
 
   if (error) {
@@ -79,7 +84,6 @@ function Menu() {
 
   return (
     <section className="menu">
-
       <h2>Our Menu</h2>
 
       <input
@@ -95,29 +99,22 @@ function Menu() {
         onSelect={setCategory}
       />
 
-      <h3>
-        Order Total: {total} ETB
-      </h3>
-
       {dishes.length === 0 && (
         <p>No dishes found.</p>
       )}
 
       <div className="dish-list">
-
         {dishes.map((dish) => (
           <Dish
             key={dish.id}
             name={dish.name}
             price={dish.price}
             spicy={dish.spicy}
-            onAdd={addToOrder}
-            onRemove={removeFromOrder}
+            onAdd={() => addToCart(dish)}
+            onRemove={() => removeFromCart(dish)}
           />
         ))}
-
       </div>
-
     </section>
   );
 }

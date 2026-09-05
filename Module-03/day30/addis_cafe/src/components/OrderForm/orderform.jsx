@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+
+import { CartContext } from "../cart/CartProvider";
+
 import "./orderform.css";
 
 function OrderForm() {
+  const {
+    items,
+    total,
+    dispatch
+  } = useContext(CartContext);
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -20,7 +29,11 @@ function OrderForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    alert("Delivery information submitted");
+    alert("Order submitted successfully!");
+
+    dispatch({
+      type: "CLEAR"
+    });
   }
 
   const validPhone =
@@ -28,11 +41,17 @@ function OrderForm() {
 
   return (
     <div className="order-form">
+      <h2>Checkout</h2>
 
-      <h2>Delivery Information</h2>
+      <h3>
+        Items in cart: {items.length}
+      </h3>
+
+      <h3>
+        Total: {total} ETB
+      </h3>
 
       <form onSubmit={handleSubmit}>
-
         <label>Full Name</label>
 
         <input
@@ -40,6 +59,7 @@ function OrderForm() {
           value={form.name}
           onChange={handleChange}
           placeholder="Enter your name"
+          required
         />
 
         <label>Phone</label>
@@ -49,6 +69,7 @@ function OrderForm() {
           value={form.phone}
           onChange={handleChange}
           placeholder="09... or +2519..."
+          required
         />
 
         {form.phone && !validPhone && (
@@ -64,17 +85,16 @@ function OrderForm() {
           value={form.area}
           onChange={handleChange}
           placeholder="Enter your area"
+          required
         />
 
         <button
           type="submit"
-          disabled={!validPhone}
+          disabled={!validPhone || items.length === 0}
         >
           Pay with TeleBirr
         </button>
-
       </form>
-
     </div>
   );
 }
