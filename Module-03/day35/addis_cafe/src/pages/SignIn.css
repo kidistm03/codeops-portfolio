@@ -1,0 +1,81 @@
+.signin-page h1 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+.signin-intro {
+  margin: 0 0 28px;
+  color: #6b6375;
+  max-width: 400px;
+}
+
+.signin-form {
+  background: white;
+  border-radius: 12px;
+  padding: 28px 24px;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.signin-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signin-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.signin-form input {
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.signin-form input:focus {
+  outline: none;
+  border-color: #8b0000;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.field-error {
+  color: #c53030;
+  font-size: 0.85rem;
+}
+
+.signin-btn {
+  padding: 14px 24px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signin-btn:hover {
+  background: #600000;
+}
+
+.signin-back {
+  margin-top: 20px;
+}
+
+.signin-back a {
+  color: #8b0000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signin-back a:hover {
+  text-decoration: underline;
+}

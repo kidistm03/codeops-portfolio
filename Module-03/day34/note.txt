@@ -1,0 +1,30 @@
+error boundary performance and lazy loading
+
+error boundary
+
+lazy loading
+   is a performance trick where a website or app waits to load pictures, 
+   videos, or content until you actually look at them, rather than loading everything all at once
+   How It Works (The Restaurant Analogy)Eager Loading (The Old Way): Imagine a waiter dumping 20 plates of food on your table 
+   all at once, even though you can only eat one at a time. It clutters the table and takes forever to bring out.
+   Lazy Loading (The Smart Way): The waiter brings you the first dish. When you finish it and look for more, they bring out 
+   the next one.Real-World Example on a WebsiteWhen you open a long webpage with 50 pictures, your browser only loads the 
+   pictures at the very top that you can see right away.The pictures further down stay blank or hidden.As you scroll down, 
+   the website quickly loads each picture right before it appears on your screen.
+   Why Is It Useful?Faster speeds: The page opens much quicker because your device has less work to do upfront.
+   Saves data: If you leave the page before scrolling to the bottom, you don't waste internet data downloading pictures you never saw.
+
+component erasu kelele we use suspence
+
+
+
+
+
+for the cart state -> use zustand
+for schema validation -> use zoid 
+add error boundary to your component in app.js
+use lazy loading
+bonus 
+use portals (modal)
+
+ **change cart state to use stand 

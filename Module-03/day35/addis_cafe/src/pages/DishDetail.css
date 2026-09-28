@@ -1,0 +1,96 @@
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #8b0000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.dish-detail-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  max-width: 520px;
+}
+
+.dish-detail-header h1 {
+  margin: 0 0 12px;
+  font-size: 1.9rem;
+  color: #1a1a1a;
+}
+
+.dish-detail-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  background: #f0f0f0;
+  color: #555;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-weight: 500;
+}
+
+.tag.spicy {
+  background: #fff0f0;
+  color: #c53030;
+}
+
+.dish-detail-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #8b0000;
+  margin: 0 0 16px;
+}
+
+.dish-detail-desc {
+  color: #6b6375;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.add-order-btn {
+  padding: 14px 28px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.add-order-btn:hover {
+  background: #600000;
+}
+
+.add-order-btn:active {
+  transform: scale(0.98);
+}
+
+.dish-not-found {
+  text-align: center;
+  padding: 48px 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.dish-not-found h2 {
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+
+.dish-not-found p {
+  margin: 0 0 20px;
+  color: #6b6375;
+}

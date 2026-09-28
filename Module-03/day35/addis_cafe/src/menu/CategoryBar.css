@@ -1,0 +1,28 @@
+.category-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  padding: 8px 18px;
+  border: 1.5px solid #8b0000;
+  background: white;
+  color: #8b0000;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+.cat-btn:hover {
+  background: #fff5f5;
+  transform: translateY(-1px);
+}
+
+.cat-btn.selected {
+  background: #8b0000;
+  color: white;
+}

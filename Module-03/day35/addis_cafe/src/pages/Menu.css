@@ -1,0 +1,36 @@
+.menu-page h1 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+.menu-intro {
+  margin: 0 0 24px;
+  color: #6b6375;
+  font-size: 1rem;
+}
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.empty-state p {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.empty-hint {
+  color: #999 !important;
+  font-size: 0.95rem !important;
+}

@@ -1,0 +1,83 @@
+.dish-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.dish-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.dish-card-link {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.dish-card-body {
+  padding: 20px 20px 12px;
+}
+
+.dish-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+}
+
+.dish-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+
+.category-tag {
+  background: #f0f0f0;
+  color: #555;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.spicy-tag {
+  background: #fff0f0;
+  color: #c53030;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.dish-price {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8b0000;
+}
+
+.add-btn {
+  margin: 0 16px 16px;
+  padding: 10px 16px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.add-btn:hover {
+  background: #600000;
+}
+
+.add-btn:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,32 @@
+.error-message {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.error-message h3 {
+  margin: 0 0 8px;
+  color: #c53030;
+}
+
+.error-message p {
+  margin: 0 0 16px;
+  color: #742a2a;
+}
+
+.error-message button {
+  padding: 10px 20px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.error-message button:hover {
+  background: #600000;
+}
