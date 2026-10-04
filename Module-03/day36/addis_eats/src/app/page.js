@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <h1>Welcome to Addis Eats</h1>
